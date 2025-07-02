@@ -5,16 +5,20 @@ import java.util.List;
 import io.github.lifveras.bradeco_cupomfiscal.internal.BookService;
 import io.github.lifveras.bradeco_cupomfiscal.internal.model.Book;
 import io.github.lifveras.bradeco_cupomfiscal.provided.interfaces.BookProvidedInterface;
-import io.github.lifveras.bredeco_pic_abstract.provided.InterfacePort;
 
-public class BookInterfacePort extends InterfacePort implements BookProvidedInterface {
+public class BookInterfacePort implements BookProvidedInterface {
 
+    private final String id;
     private final BookService bookService;
 
     public BookInterfacePort(BookService bookService) {
         this.id = "bookOpsPort";
         this.bookService = bookService;
         initialize();
+    }
+
+    public String getId() {
+        return id;
     }
 
     @Override
